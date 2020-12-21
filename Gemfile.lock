@@ -1,3 +1,21 @@
+GIT
+  remote: git@github.com:sungwoncho/has_friendship.git
+  revision: 473357ff210009c24c652bd78285c3cbd5efead1
+  specs:
+    has_friendship (1.1.8)
+      activemodel (>= 4.2.0, < 6.2)
+      activerecord (>= 4.2.0, < 6.2)
+      activesupport (>= 4.2.0, < 6.2)
+      stateful_enum
+
+GIT
+  remote: https://github.com/faker-ruby/faker.git
+  revision: d32beae1ed41353c9b74db8b30512deb2366a0cf
+  branch: master
+  specs:
+    faker (2.15.1)
+      i18n (>= 1.6, < 2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -203,6 +221,7 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
+    stateful_enum (0.6.0)
     thor (1.0.1)
     tilt (2.0.10)
     turbolinks (5.2.1)
@@ -243,7 +262,9 @@ DEPENDENCIES
   capybara (>= 3.26)
   devise
   dotenv-rails
+  faker!
   font-awesome-sass
+  has_friendship!
   jbuilder (~> 2.7)
   listen (~> 3.3)
   pg (~> 1.1)
