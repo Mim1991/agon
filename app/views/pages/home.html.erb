@@ -1,2 +1,5 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<ul>
+<% @players.each do |player| %>
+    <%= link_to player.first_name, user_path(player) %>
+<% end %>
+</ul>   

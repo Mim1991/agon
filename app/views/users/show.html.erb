@@ -1,0 +1,2 @@
+<h1>Hello <%= @user.first_name %></h1>
+<%= link_to "Add Friend", user_friendships_path(@user), method: :post, remote: true %>
