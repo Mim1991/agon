@@ -5,6 +5,9 @@ class FriendshipsController < ApplicationController
     @friends = @user.friends
     @requests = @user.requested_friends
     @pending = @user.pending_friends
+    if params[:query].present?
+      @search = User.search_by_name(params[:query])
+    end
   end
 
   def create
