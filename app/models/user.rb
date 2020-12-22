@@ -11,7 +11,7 @@ class User < ApplicationRecord
     self.requested_friends.any?
   end
 
-  def requested_requests?
+  def requested_friends?
     self.pending_friends.any?
   end
 
