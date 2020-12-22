@@ -2,7 +2,14 @@ class User < ApplicationRecord
   has_friendship
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  
+
+  include PgSearch::Model
+  pg_search_scope :search_by_name,
+    against: [ :first_name, :last_name ],
+    using: {
+      tsearch: { prefix: true }
+    }
+
   def friends?
     self.friends
   end
