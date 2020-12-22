@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_21_195454) do
+ActiveRecord::Schema.define(version: 2020_12_22_174711) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "courses", force: :cascade do |t|
+    t.string "name"
+    t.string "address"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "friendships", id: :serial, force: :cascade do |t|
     t.string "friendable_type"
@@ -24,6 +31,17 @@ ActiveRecord::Schema.define(version: 2020_12_21_195454) do
     t.integer "blocker_id"
     t.integer "status"
     t.index ["friendable_id", "friend_id"], name: "index_friendships_on_friendable_id_and_friend_id", unique: true
+  end
+
+  create_table "scores", force: :cascade do |t|
+    t.integer "score"
+    t.integer "shots"
+    t.bigint "user_id"
+    t.bigint "course_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["course_id"], name: "index_scores_on_course_id"
+    t.index ["user_id"], name: "index_scores_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -40,4 +58,6 @@ ActiveRecord::Schema.define(version: 2020_12_21_195454) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "scores", "courses"
+  add_foreign_key "scores", "users"
 end
