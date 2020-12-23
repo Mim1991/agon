@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_friendship
+  has_many :scores
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 

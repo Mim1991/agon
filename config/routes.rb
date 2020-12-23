@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     post "/friendships/remove", to: "friendships#remove"
   end
   resources :friendships, only: [:index]
-  resources :courses
+  resources :courses, only: [:index, :show]
 
 
 end
