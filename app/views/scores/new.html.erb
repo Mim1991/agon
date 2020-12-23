@@ -1,0 +1,7 @@
+<%= simple_form_for [@course, @score] do |f| %>
+  <%= f.input :score, label: "Score" %> %>
+  <%= f.input :shots, label: "Shots" %>
+  <%= f.submit class: 'btn btn-primary' %>
+  <%= link_to "Courses", courses_path %>
+<% end %>
+  

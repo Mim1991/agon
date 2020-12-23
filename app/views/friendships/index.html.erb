@@ -8,7 +8,6 @@
         <%= friend.first_name %>
         <%= friend.last_name %>
         <p><%= link_to "Accept" , user_friendships_add_path(friend), method: :post %> | <%= link_to "Decline" , user_friendships_reject_path(friend.id), method: :post %></p>
-
       <% end %>
     <% end %>
   </div>
