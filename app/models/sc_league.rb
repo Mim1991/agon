@@ -1,0 +1,2 @@
+class ScLeague < ApplicationRecord
+end
